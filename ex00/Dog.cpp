@@ -7,10 +7,13 @@
 Dog::Dog()
 {
 	_type = "Dog";
+	_printPrefix() << "Default constructor called" << std::endl;
 }
 
 Dog::Dog( const Dog & src )
 {
+	*this = src;
+	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
 
@@ -20,6 +23,7 @@ Dog::Dog( const Dog & src )
 
 Dog::~Dog()
 {
+	_printPrefix() << "Destructor called" << std::endl;
 }
 
 
@@ -29,24 +33,27 @@ Dog::~Dog()
 
 Dog &				Dog::operator=( Dog const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	_printPrefix() << "Copy assignment operator called.";
+	if ( this != &rhs )
+	{
+		this->_type = rhs._type;
+		std::cout << " rhs: ";
+		_printPrefix();
+	}
+	else
+		std::cout << " this == rhs";
+	std::cout << std::endl;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Dog const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	Dog::makeSound(void) const
+{
+	_printPrefix() << "Dog is Barking!" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:21:55 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/09 13:37:22 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/11 12:51:17 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ Animal &				Animal::operator=( Animal const & rhs )
 		std::cout << " rhs: ";
 		_printPrefix();
 	}
+	else
+		std::cout << " this == rhs";
 	std::cout << std::endl;
 	return *this;
 }
@@ -76,7 +78,6 @@ std::ostream	&Animal::_printPrefix(const std::string &context, const std::string
 		t = "...";
 	return std::cout << std::left << std::setw(20) << "[" + context + "]" + "(" + t + ") ";
 }
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
