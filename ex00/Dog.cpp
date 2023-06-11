@@ -5,12 +5,14 @@
 */
 
 Dog::Dog()
+	: Animal()
 {
 	_type = "Dog";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
 Dog::Dog( const Dog & src )
+	: Animal(src)
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
@@ -49,6 +51,11 @@ Dog &				Dog::operator=( Dog const & rhs )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+std::ostream	&Dog::_printPrefix(void) const
+{
+	return Animal::_printPrefix("Dog", _type);
+}
 
 void	Dog::makeSound(void) const
 {

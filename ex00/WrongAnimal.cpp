@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 13:21:55 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/11 17:16:41 by yrabby           ###   ########.fr       */
+/*   Created: 2023/06/11 17:34:00 by yrabby            #+#    #+#             */
+/*   Updated: 2023/06/11 17:38:16 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : _type("Animal")
+WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-Animal::Animal( const Animal & src )
+WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
@@ -32,7 +32,7 @@ Animal::Animal( const Animal & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
 	_printPrefix() << "Destructor called" << std::endl;
 }
@@ -41,7 +41,7 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 {
 	_printPrefix() << "Copy assignment operator called.";
 	if ( this != &rhs )
@@ -60,30 +60,30 @@ Animal &				Animal::operator=( Animal const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
-	_printPrefix() << "...(Animal Noises)..." << std::endl;
+	_printPrefix() << "...(WrongAnimal Noises)..." << std::endl;
 }
 
-std::ostream	&Animal::_printPrefix(void) const
+std::ostream	&WrongAnimal::_printPrefix(void) const
 {
-	return _printPrefix("Animal", _type);
+	return _printPrefix("WrongAnimal", _type);
 }
 
-std::ostream	&Animal::_printPrefix(const std::string &context, const std::string &type) const
+std::ostream	&WrongAnimal::_printPrefix(const std::string &context, const std::string &type) const
 {
 	std::string	t = type;
 
 	if (t.empty())
 		t = "...";
-	return std::cout << std::left << std::setw(20) << "[" + context + "]" + "(" + t + ") ";
+	return std::cout << std::left << std::setw(30) << "[" + context + "]" + "(" + t + ") ";
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const std::string	&Animal::getType(void) const
+const std::string	&WrongAnimal::getType(void) const
 {
 	return _type;
 }

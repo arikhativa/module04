@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/11 17:09:13 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/11 17:14:47 by yrabby           ###   ########.fr       */
+/*   Created: 2023/06/11 17:34:24 by yrabby            #+#    #+#             */
+/*   Updated: 2023/06/11 17:35:40 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include <iostream>
 # include <string>
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 
 	public:
-		Dog();
-		Dog( Dog const & src );
-		~Dog();
 
-		Dog &operator=( Dog const & rhs );
-		void	makeSound(void) const;
+		WrongCat();
+		WrongCat( WrongCat const & src );
+		~WrongCat();
+
+		WrongCat &		operator=( WrongCat const & rhs );
+		void		makeSound(void) const;
 
 	private:
 		std::ostream	&_printPrefix(void) const;
 
 };
 
-#endif /* ************************************************************* DOG_H */
+std::ostream &			operator<<( std::ostream & o, WrongCat const & i );
+
+#endif

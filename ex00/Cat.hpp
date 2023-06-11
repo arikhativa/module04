@@ -16,8 +16,10 @@ class Cat : public Animal
 		~Cat();
 
 		Cat &		operator=( Cat const & rhs );
+		void		makeSound(void) const;
 
 	private:
+		std::ostream	&_printPrefix(void) const;
 
 };
 

@@ -5,12 +5,17 @@
 */
 
 Cat::Cat()
+	: Animal()
 {
 	_type = "Cat";
+	_printPrefix() << "Default constructor called" << std::endl;
 }
 
 Cat::Cat( const Cat & src )
+	: Animal()
 {
+	*this = src;
+	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
 
@@ -20,6 +25,7 @@ Cat::Cat( const Cat & src )
 
 Cat::~Cat()
 {
+	_printPrefix() << "Destructor called" << std::endl;
 }
 
 
@@ -29,23 +35,32 @@ Cat::~Cat()
 
 Cat &				Cat::operator=( Cat const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	_printPrefix() << "Copy assignment operator called.";
+	if ( this != &rhs )
+	{
+		this->_type = rhs._type;
+		std::cout << " rhs: ";
+		_printPrefix();
+	}
+	else
+		std::cout << " this == rhs";
+	std::cout << std::endl;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Cat const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+std::ostream	&Cat::_printPrefix(void) const
+{
+	return Animal::_printPrefix("Cat", _type);
+}
+
+void	Cat::makeSound(void) const
+{
+	_printPrefix() << "Cat is Meowing!" << std::endl;
+}
 
 
 /*
