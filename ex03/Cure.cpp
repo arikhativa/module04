@@ -22,11 +22,10 @@ Cure::Cure( const Cure & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cure::~Cure()
+Cure::~Cure(void)
 {
 	_printPrefix() << "Destructor called" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -49,7 +48,7 @@ Cure &				Cure::operator=( Cure const & rhs )
 
 void Cure::use(ICharacter& target)
 {
-
+	_printPrefix() << "implment use()" << std::endl;
 }
 
 AMateria* Cure::clone(void) const
@@ -59,18 +58,8 @@ AMateria* Cure::clone(void) const
 
 std::ostream	&Cure::_printPrefix(void) const
 {
-	return _printPrefix("Cure", _type);
+	return AMateria::_printPrefix("Cure", _type);
 }
-
-std::ostream	&Cure::_printPrefix(const std::string &context, const std::string &type) const
-{
-	std::string	t = type;
-
-	if (t.empty())
-		t = "...";
-	return std::cout << std::left << std::setw(20) << "[" + context + "]" + "(" + t + ") ";
-}
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

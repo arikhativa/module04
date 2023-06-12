@@ -20,8 +20,7 @@ class Cure : public AMateria
 		virtual AMateria* clone() const;
 	
 	private:
-		std::ostream	&_printPrefix(void) const;
-		std::ostream	&_printPrefix(const std::string &context, const std::string &type) const;
+		virtual std::ostream	&_printPrefix(void) const;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:43:41 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 11:27:04 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 11:54:54 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class AMateria
 
 	protected:
 		std::string _type;
+
+		virtual std::ostream	&_printPrefix(void) const;
+		std::ostream	&_printPrefix(const std::string &context, const std::string &type) const;
 		
 	public:
 		AMateria(std::string const & type);
