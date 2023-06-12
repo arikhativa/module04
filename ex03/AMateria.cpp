@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:38 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 13:30:28 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 14:11:25 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 AMateria::AMateria(std::string const & type)
 	: _type(type)
 {
-	_printPrefix("AMateria", type) << "Constructor called" << std::endl;
+	printInfo("AMateria", type) << "Constructor called" << std::endl;
 }
 
 /*
@@ -28,7 +28,7 @@ AMateria::AMateria(std::string const & type)
 
 AMateria::~AMateria()
 {
-	_printPrefix("AMateria", _type) << "Destructor called" << std::endl;
+	printInfo("AMateria", _type) << "Destructor called" << std::endl;
 }
 
 /*
@@ -44,7 +44,8 @@ AMateria::~AMateria()
 // TODO maybe this will use something n the target
 void AMateria::use(ICharacter& target)
 {
-	_printPrefix("AMateria", _type) << "use() called" << std::endl;
+	(void)target;
+	printInfo("AMateria", _type) << "use() called" << std::endl;
 }
 
 

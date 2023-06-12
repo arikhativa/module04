@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/12 13:55:57 by yrabby            #+#    #+#             */
+/*   Updated: 2023/06/12 14:04:14 by yrabby           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cure.hpp"
 
 /*
@@ -7,16 +19,16 @@
 Cure::Cure()
 	: AMateria("cure")
 {
-	_printPrefix("Cure") << "Default constructor called" << std::endl;
+	printInfo("Cure") << "Constructor called" << std::endl;
 }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cure::~Cure(void)
+Cure::~Cure()
 {
-	_printPrefix("Cure") << "Destructor called" << std::endl;
+	printInfo("Cure") << "Destructor called" << std::endl;
 }
 
 /*
@@ -29,7 +41,7 @@ Cure::~Cure(void)
 
 void Cure::use(ICharacter& target)
 {
-	_printPrefix("Cure") << "* heals " + target.getName() +  "'s wounds *" << std::endl;
+	printInfo("Cure") << "* heals " + target.getName() +  "'s wounds *" << std::endl;
 }
 
 AMateria* Cure::clone(void) const

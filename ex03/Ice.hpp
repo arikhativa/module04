@@ -5,22 +5,16 @@
 # include <string>
 
 # include "AMateria.hpp"
+# include "print.hpp"
 
-class Ice
+class Ice : public AMateria
 {
-
 	public:
-
 		Ice();
-		Ice( Ice const & src );
-		~Ice();
+		virtual ~Ice();
 
-		Ice &		operator=( Ice const & rhs );
-
-	private:
-
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter& target);
 };
-
-std::ostream &			operator<<( std::ostream & o, Ice const & i );
 
 #endif /* ************************************************************* ICE_H */

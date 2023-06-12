@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/12 13:55:52 by yrabby            #+#    #+#             */
+/*   Updated: 2023/06/12 14:04:14 by yrabby           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Ice.hpp"
 
 /*
@@ -5,13 +17,10 @@
 */
 
 Ice::Ice()
+	: AMateria("ice")
 {
+	printInfo("Ice") << "Constructor called" << std::endl;
 }
-
-Ice::Ice( const Ice & src )
-{
-}
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -19,6 +28,7 @@ Ice::Ice( const Ice & src )
 
 Ice::~Ice()
 {
+	printInfo("Ice") << "Destructor called" << std::endl;
 }
 
 
@@ -26,26 +36,19 @@ Ice::~Ice()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Ice &				Ice::operator=( Ice const & rhs )
-{
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
-	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, Ice const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void Ice::use(ICharacter& target)
+{
+	printInfo("Ice") << "* shoots an ice bolt at " + target.getName() + " *" << std::endl;
+}
+
+AMateria* Ice::clone(void) const
+{
+	return new Ice();
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:43:41 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 13:27:36 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 14:11:10 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
 # include "print.hpp"
 # include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria
 {
 	protected:
 		std::string _type;
 
 	public:
-		AMateria(std::string const & type);
+		explicit AMateria(std::string const & type);
 		virtual ~AMateria();
 
 		std::string const & getType(void) const;

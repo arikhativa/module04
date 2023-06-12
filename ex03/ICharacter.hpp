@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:43 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 13:30:45 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 14:07:55 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string>
 
-# include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

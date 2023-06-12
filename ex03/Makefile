@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 13:56:52 by yrabby            #+#    #+#              #
-#    Updated: 2023/06/12 10:43:10 by yrabby           ###   ########.fr        #
+#    Updated: 2023/06/12 14:07:20 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME 					= test
 
 # class
 CLASS_DIR				= .
-CLASS_NAME				= AMateria
+CLASS_NAME				= AMateria Character Cure Ice
 
 # other src
-OTHER_SRC				= 
+OTHER_SRC				= print
 
 # main
 SRC_MAIN				= main
@@ -29,7 +29,7 @@ SRC_NAME				= $(addsuffix $(SRC_SUFFIX), $(CLASS_NAME) $(SRC_MAIN) $(OTHER_SRC))
 SRC						= $(addprefix $(SRC_DIR)/, $(SRC_NAME))
 
 # other header
-OTHER_HEAD				= 
+OTHER_HEAD				= ICharacter IMateriaSource print
 
 # head
 HEAD_SUFFIX				= .hpp
