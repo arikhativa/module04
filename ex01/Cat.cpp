@@ -5,22 +5,16 @@
 */
 
 Cat::Cat()
-	: Animal()
+	: Animal(),
+	_brain(new Brain())
 {
 	_type = "Cat";
-
-    try {
-		_brain = new Brain();
-    }
-    catch (const std::bad_alloc& e) {
-        std::cout << "Memory Allocation is failed : " << e.what() << std::endl;
-    }
-
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
 Cat::Cat( const Cat & src )
-	: Animal()
+	: Animal(),
+	_brain(new Brain())
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
@@ -33,6 +27,7 @@ Cat::Cat( const Cat & src )
 
 Cat::~Cat()
 {
+	delete _brain;
 	_printPrefix() << "Destructor called" << std::endl;
 }
 
@@ -47,8 +42,7 @@ Cat &				Cat::operator=( Cat const & rhs )
 	if ( this != &rhs )
 	{
 		this->_type = rhs._type;
-		std::cout << " rhs: ";
-		_printPrefix();
+		*_brain = *rhs._brain;
 	}
 	else
 		std::cout << " this == rhs";

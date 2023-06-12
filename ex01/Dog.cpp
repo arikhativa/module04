@@ -42,9 +42,7 @@ Dog &				Dog::operator=( Dog const & rhs )
 	if ( this != &rhs )
 	{
 		this->_type = rhs._type;
-		_brain = rhs._brain;
-		std::cout << " rhs: ";
-		_printPrefix();
+		*_brain = *rhs._brain;
 	}
 	else
 		std::cout << " this == rhs";

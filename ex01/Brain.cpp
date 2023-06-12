@@ -39,8 +39,6 @@ Brain &				Brain::operator=( Brain const & rhs )
 	{
 		for (int i = 0; i < 100; i++)
 			_ideas[i] = rhs._ideas[i];
-		std::cout << " rhs: ";
-		_printPrefix();
 	}
 	else
 		std::cout << " this == rhs";

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:21:55 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/11 17:16:41 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 09:28:59 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ Animal &				Animal::operator=( Animal const & rhs )
 	if ( this != &rhs )
 	{
 		this->_type = rhs._type;
-		std::cout << " rhs: ";
-		_printPrefix();
 	}
 	else
 		std::cout << " this == rhs";
