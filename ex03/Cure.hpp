@@ -5,23 +5,16 @@
 # include <string>
 
 # include "AMateria.hpp"
+# include "print.hpp"
 
 class Cure : public AMateria
 {
 	public:
-
 		Cure();
-		Cure( Cure const & src );
-		~Cure();
+		virtual ~Cure();
 
-		Cure &		operator=( Cure const & rhs );
-
-		virtual void use(ICharacter& target);
 		virtual AMateria* clone() const;
-	
-	private:
-		virtual std::ostream	&_printPrefix(void) const;
-
+		virtual void use(ICharacter& target);
 };
 
 #endif /* ************************************************************ CURE_H */

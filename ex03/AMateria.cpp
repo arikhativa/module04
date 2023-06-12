@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:38 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 11:53:47 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 13:30:28 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AMateria::AMateria()
-	: _type("...")
+AMateria::AMateria(std::string const & type)
+	: _type(type)
 {
-	_printPrefix() << "Default constructor called" << std::endl;
+	_printPrefix("AMateria", type) << "Constructor called" << std::endl;
 }
-
-AMateria::AMateria( const AMateria & src )
-	: _type("...")
-{
-	*this = src;
-	_printPrefix() << "Copy constructor called" << std::endl;
-}
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -36,47 +28,35 @@ AMateria::AMateria( const AMateria & src )
 
 AMateria::~AMateria()
 {
-	_printPrefix() << "Destructor called" << std::endl;
+	_printPrefix("AMateria", _type) << "Destructor called" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AMateria &				AMateria::operator=( AMateria const & rhs )
-{
-	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
-		this->_type = rhs._type;
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
-	return *this;
-}
-
+// TODO not sure about removeing the operator=()
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&AMateria::_printPrefix(void) const
+// TODO maybe this will use something n the target
+void AMateria::use(ICharacter& target)
 {
-	return _printPrefix("AMateria", "");
+	_printPrefix("AMateria", _type) << "use() called" << std::endl;
 }
 
-std::ostream	&AMateria::_printPrefix(const std::string &context, const std::string &type) const
-{
-	std::string	t = type;
-
-	if (t.empty())
-		t = "...";
-	return std::cout << std::left << std::setw(20) << "[" + context + "]" + "(" + t + ") ";
-}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+std::string const &AMateria::getType(void) const
+{
+	return _type;
+}
+
 
 
 /* ************************************************************************** */

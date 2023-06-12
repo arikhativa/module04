@@ -7,16 +7,8 @@
 Cure::Cure()
 	: AMateria("cure")
 {
-	_printPrefix() << "Default constructor called" << std::endl;
+	_printPrefix("Cure") << "Default constructor called" << std::endl;
 }
-
-Cure::Cure( const Cure & src )
-	: AMateria("cure")
-{
-	*this = src;
-	_printPrefix() << "Copy constructor called" << std::endl;
-}
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -24,23 +16,12 @@ Cure::Cure( const Cure & src )
 
 Cure::~Cure(void)
 {
-	_printPrefix() << "Destructor called" << std::endl;
+	_printPrefix("Cure") << "Destructor called" << std::endl;
 }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
-
-Cure &				Cure::operator=( Cure const & rhs )
-{
-	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
-		this->_type = rhs._type;
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
-	return *this;
-}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -48,17 +29,12 @@ Cure &				Cure::operator=( Cure const & rhs )
 
 void Cure::use(ICharacter& target)
 {
-	_printPrefix() << "implment use()" << std::endl;
+	_printPrefix("Cure") << "* heals " + target.getName() +  "'s wounds *" << std::endl;
 }
 
 AMateria* Cure::clone(void) const
 {
-	return new Cure(*this);
-}
-
-std::ostream	&Cure::_printPrefix(void) const
-{
-	return AMateria::_printPrefix("Cure", _type);
+	return new Cure();
 }
 
 /*

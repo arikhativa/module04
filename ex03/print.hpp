@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   print.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 10:45:43 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 13:30:45 by yrabby           ###   ########.fr       */
+/*   Created: 2023/06/12 13:07:24 by yrabby            #+#    #+#             */
+/*   Updated: 2023/06/12 13:14:37 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef PRINT_HPP
+# define PRINT_HPP
 
+# include <iostream>
 # include <string>
+# include <iomanip>
 
-# include "AMateria.hpp"
+std::ostream	&_printPrefix(const std::string &context, const std::string &type = "...");
 
-class ICharacter
-{
-	public:
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
-};
-
-#endif /* ****************************************************** ICHARACTER_H */
-
+#endif
