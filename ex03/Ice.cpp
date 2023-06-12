@@ -1,14 +1,14 @@
-#include "Animal.hpp"
+#include "Ice.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal()
+Ice::Ice()
 {
 }
 
-Animal::Animal( const Animal & src )
+Ice::Ice( const Ice & src )
 {
 }
 
@@ -17,7 +17,7 @@ Animal::Animal( const Animal & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+Ice::~Ice()
 {
 }
 
@@ -26,7 +26,7 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+Ice &				Ice::operator=( Ice const & rhs )
 {
 	//if ( this != &rhs )
 	//{
@@ -35,7 +35,7 @@ Animal &				Animal::operator=( Animal const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream &			operator<<( std::ostream & o, Ice const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;

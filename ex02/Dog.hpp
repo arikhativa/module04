@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:09:13 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 10:34:38 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 11:39:00 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class Dog : public AAnimal
 
 		Dog &operator=( Dog const & rhs );
 		void	makeSound(void) const;
+
+		void				setIdea(int i, const std::string &idea);
+		const std::string	&getIdea(int i) const;
 
 	private:
 		Brain *_brain;

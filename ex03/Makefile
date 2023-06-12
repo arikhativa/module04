@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 13:56:52 by yrabby            #+#    #+#              #
-#    Updated: 2023/06/12 10:34:38 by yrabby           ###   ########.fr        #
+#    Updated: 2023/06/12 10:43:10 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 					= test
 
 # class
 CLASS_DIR				= .
-CLASS_NAME				= AAnimal Dog Cat WrongCat WrongAnimal Brain
+CLASS_NAME				= AMateria
 
 # other src
 OTHER_SRC				= 

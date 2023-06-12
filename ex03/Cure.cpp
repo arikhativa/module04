@@ -1,20 +1,17 @@
-#include "Cat.hpp"
+#include "Cure.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat()
-	: AAnimal(),
-	_brain(new Brain())
+Cure::Cure()
+	: AMateria("cure")
 {
-	_type = "Cat";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-Cat::Cat( const Cat & src )
-	: AAnimal(),
-	_brain(new Brain())
+Cure::Cure( const Cure & src )
+	: AMateria("cure")
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
@@ -25,9 +22,8 @@ Cat::Cat( const Cat & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cat::~Cat()
+Cure::~Cure()
 {
-	delete _brain;
 	_printPrefix() << "Destructor called" << std::endl;
 }
 
@@ -36,14 +32,11 @@ Cat::~Cat()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
+Cure &				Cure::operator=( Cure const & rhs )
 {
 	_printPrefix() << "Copy assignment operator called.";
 	if ( this != &rhs )
-	{
 		this->_type = rhs._type;
-		*_brain = *rhs._brain;
-	}
 	else
 		std::cout << " this == rhs";
 	std::cout << std::endl;
@@ -54,14 +47,28 @@ Cat &				Cat::operator=( Cat const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&Cat::_printPrefix(void) const
+void Cure::use(ICharacter& target)
 {
-	return AAnimal::_printPrefix("Cat", _type);
+
 }
 
-void	Cat::makeSound(void) const
+AMateria* Cure::clone(void) const
 {
-	_printPrefix() << "Cat is Meowing!" << std::endl;
+	return new Cure(*this);
+}
+
+std::ostream	&Cure::_printPrefix(void) const
+{
+	return _printPrefix("Cure", _type);
+}
+
+std::ostream	&Cure::_printPrefix(const std::string &context, const std::string &type) const
+{
+	std::string	t = type;
+
+	if (t.empty())
+		t = "...";
+	return std::cout << std::left << std::setw(20) << "[" + context + "]" + "(" + t + ") ";
 }
 
 

@@ -54,6 +54,16 @@ Dog &				Dog::operator=( Dog const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	Dog::setIdea(int i, const std::string &idea)
+{
+	_brain->setIdea(i, idea);
+}
+
+const std::string	&Dog::getIdea(int i) const
+{
+	return _brain->getIdea(i);
+}
+
 std::ostream	&Dog::_printPrefix(void) const
 {
 	return AAnimal::_printPrefix("Dog", _type);

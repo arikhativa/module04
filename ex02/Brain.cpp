@@ -50,6 +50,20 @@ Brain &				Brain::operator=( Brain const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	Brain::setIdea(int i, const std::string &idea)
+{
+	if (i < 0 || i > 99)
+		return ;
+	_ideas[i] = idea;
+}
+
+const std::string	&Brain::getIdea(int i) const
+{
+	if (i < 0 || i > 99)
+		return _ideas[0];
+	return _ideas[i];
+}
+
 std::ostream	&Brain::_printPrefix(void) const
 {
 	return _printPrefix("Brain", "");
