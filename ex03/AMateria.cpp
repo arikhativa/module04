@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:38 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 14:11:25 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/12 16:48:45 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
+
+// AMateria::AMateria()
+// 	: _type("default")
+// {
+// 	printInfo("AMateria", _type) << "Default constructor called" << std::endl;
+// }
+
+// AMateria::AMateria(const AMateria &src)
+// {
+// 	*this = src;
+// 	printInfo("AMateria", _type) << "Copy constructor called" << std::endl;
+// }
+
 
 AMateria::AMateria(std::string const & type)
 	: _type(type)
@@ -35,7 +48,12 @@ AMateria::~AMateria()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// TODO not sure about removeing the operator=()
+// AMateria	&AMateria::operator=( AMateria const & rhs )
+// {
+// 	printInfo("AMateria", _type) << "Copy assignment operator called." << std::endl;
+// 	(void)rhs;
+// 	return *this;
+// }
 
 /*
 ** --------------------------------- METHODS ----------------------------------

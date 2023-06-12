@@ -10,7 +10,7 @@
 class Character : public ICharacter
 {
 	public:
-		Character(const std::string &name);
+		explicit Character(const std::string &name);
 		Character( Character const & src );
 		virtual ~Character();
 	
