@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:38 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 16:48:45 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/13 12:03:26 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,18 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-// AMateria::AMateria()
-// 	: _type("default")
-// {
-// 	printInfo("AMateria", _type) << "Default constructor called" << std::endl;
-// }
+AMateria::AMateria()
+	: _type("default")
+{
+	printInfo("AMateria", _type) << "Default constructor called" << std::endl;
+}
 
-// AMateria::AMateria(const AMateria &src)
-// {
-// 	*this = src;
-// 	printInfo("AMateria", _type) << "Copy constructor called" << std::endl;
-// }
+AMateria::AMateria(const AMateria &src)
+	: _type("default")
+{
+	(void)src;
+	printInfo("AMateria", _type) << "Copy constructor called" << std::endl;
+}
 
 
 AMateria::AMateria(std::string const & type)
@@ -48,23 +49,23 @@ AMateria::~AMateria()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// AMateria	&AMateria::operator=( AMateria const & rhs )
-// {
-// 	printInfo("AMateria", _type) << "Copy assignment operator called." << std::endl;
-// 	(void)rhs;
-// 	return *this;
-// }
+AMateria	&AMateria::operator=( AMateria const & rhs )
+{
+	printInfo("AMateria", _type) << "Copy assignment operator called." << std::endl;
+	(void)rhs;
+	return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
 // TODO maybe this will use something n the target
-void AMateria::use(ICharacter& target)
-{
-	(void)target;
-	printInfo("AMateria", _type) << "use() called" << std::endl;
-}
+// void AMateria::use(ICharacter& target)
+// {
+// 	(void)target;
+// 	printInfo("AMateria", _type) << "use() called" << std::endl;
+// }
 
 
 /*

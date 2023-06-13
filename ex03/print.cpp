@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:07:17 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 16:50:09 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/13 12:48:08 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 std::ostream	&title(const std::string &s)
 {
 	std::string tmp = " - " + s + " - ";
-	return std::cout << std::left << std::setw(20) << tmp << std::endl;
+	return std::cout << std::endl<< std::left << tmp << std::endl << std::endl;
 }
 
 std::ostream	&printInfo(const std::string &context, const std::string &type)

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:55:57 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 16:51:03 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/13 12:06:33 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ Cure::Cure()
 	printInfo("Cure") << "Constructor called" << std::endl;
 }
 
+Cure::Cure(const Cure &src)
+	: AMateria("cure")
+{
+	(void)src;
+	printInfo("Cure") << "Copy constructor called" << std::endl;
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -34,6 +41,14 @@ Cure::~Cure()
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
+
+Cure &		Cure::operator=( Cure const & rhs )
+{
+	printInfo("Cure") << "Copy assignment operator called." << std::endl;
+	(void)rhs;
+	return *this;
+}
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------

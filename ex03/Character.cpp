@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:09:15 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 16:50:45 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/13 12:48:24 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ Character::Character(const std::string &name)
 }
 
 Character::Character( const Character & src )
+	: _name(src._name)
 {
+	for (int i = 0; i < _inventorySize; i++)
+		_inventory[i] = NULL;
 	*this = src;
 	printInfo("Character", _name) << "Copy constructor called" << std::endl;
 }
@@ -53,26 +56,23 @@ Character &				Character::operator=( Character const & rhs )
 	printInfo("Character", _name) << "Copy assignment operator called.";
 	if ( this != &rhs )
 	{
-		std::cout << " rhs: ";
-		printInfo("Character", rhs._name);
+		std::cout << " rhs: " << rhs._name << std::endl;
 		_name = rhs._name;
 		for (int i = 0; i < _inventorySize; i++)
 		{
 			if (_inventory[i])
 			{
 				delete _inventory[i];
-				_inventory[i] = rhs._inventory[i]->clone();
-			}
-			else
 				_inventory[i] = NULL;
+			}
+			if (rhs._inventory[i])
+				_inventory[i] = rhs._inventory[i]->clone();
 		}
 	}
 	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+		std::cout << " this == rhs" << std::endl;
 	return *this;
 }
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -103,11 +103,8 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (idx > 0 || idx < _inventorySize)
-	{
-		if (_inventory[idx])
-			_inventory[idx]->use(target);
-	}
+	if ((idx > 0 || idx < _inventorySize) && (_inventory[idx]))
+		_inventory[idx]->use(target);
 }
 
 /*

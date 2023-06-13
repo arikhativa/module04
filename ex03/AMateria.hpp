@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:43:41 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 16:48:29 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/13 12:05:45 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,17 @@ class AMateria
 	private:
 		std::string _type;
 
+		AMateria();
+		AMateria(const AMateria &src);
+		AMateria &		operator=( AMateria const & rhs );
+
 	public:
-		// AMateria();
-		// AMateria(const AMateria &src);
 		explicit AMateria(std::string const & type);
 		virtual ~AMateria();
 
-		// AMateria &		operator=( AMateria const & rhs );
-
-
 		std::string const & getType(void) const;
 		virtual AMateria* clone(void) const = 0;
-		virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target) = 0;
 };
 
 #endif /* ******************************************************** AMATERIA_H */

@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:55:52 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/12 14:04:14 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/13 12:07:18 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ Ice::Ice()
 	printInfo("Ice") << "Constructor called" << std::endl;
 }
 
+Ice::Ice(const Ice &src)
+	: AMateria("ice")
+{
+	(void)src;
+	printInfo("Ice") << "Copy constructor called" << std::endl;
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -35,6 +42,13 @@ Ice::~Ice()
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
+
+Ice &		Ice::operator=( Ice const & rhs )
+{
+	printInfo("Ice") << "Copy assignment operator called." << std::endl;
+	(void)rhs;
+	return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
