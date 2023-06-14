@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:09:15 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/13 12:48:24 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/06/14 11:13:50 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 Character::Character(const std::string &name)
 	: _name(name)
 {
-	for (int i = 0; i < _inventorySize; i++)
+	for (int i = 0; i < _INVENTORY_SIZE; i++)
 		_inventory[i] = NULL;
-	printInfo("Character", _name) << "Constructor called" << std::endl;
+	// printInfo("Character", _name) << "Constructor called" << std::endl;
 }
 
 Character::Character( const Character & src )
 	: _name(src._name)
 {
-	for (int i = 0; i < _inventorySize; i++)
+	for (int i = 0; i < _INVENTORY_SIZE; i++)
 		_inventory[i] = NULL;
 	*this = src;
-	printInfo("Character", _name) << "Copy constructor called" << std::endl;
+	// printInfo("Character", _name) << "Copy constructor called" << std::endl;
 }
 
 /*
@@ -39,11 +39,14 @@ Character::Character( const Character & src )
 
 Character::~Character()
 {
-	printInfo("Character", _name) << "Destructor called" << std::endl;
-	for (int i = 0; i < _inventorySize; i++)
+	// printInfo("Character", _name) << "Destructor called" << std::endl;
+	for (int i = 0; i < _INVENTORY_SIZE; i++)
 	{
 		if (_inventory[i])
+		{
 			delete _inventory[i];
+			_inventory[i] = NULL;
+		}
 	}
 }
 
@@ -53,12 +56,12 @@ Character::~Character()
 
 Character &				Character::operator=( Character const & rhs )
 {
-	printInfo("Character", _name) << "Copy assignment operator called.";
+	// printInfo("Character", _name) << "Copy assignment operator called.";
 	if ( this != &rhs )
 	{
 		std::cout << " rhs: " << rhs._name << std::endl;
 		_name = rhs._name;
-		for (int i = 0; i < _inventorySize; i++)
+		for (int i = 0; i < _INVENTORY_SIZE; i++)
 		{
 			if (_inventory[i])
 			{
@@ -79,23 +82,23 @@ Character &				Character::operator=( Character const & rhs )
 */
 void	Character::equip(AMateria* m)
 {
-	for (int i = 0; i < _inventorySize; i++)
+	for (int i = 0; i < _INVENTORY_SIZE; i++)
 	{
 		if (!_inventory[i])
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			return ;
 		}
 	}
+	std::cerr << "Inventory is full" << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
-	if (idx > 0 || idx < _inventorySize)
+	if (idx >= 0 && idx < _INVENTORY_SIZE)
 	{
 		if (_inventory[idx])
 		{
-			delete _inventory[idx];
 			_inventory[idx] = NULL;
 		}
 	}
@@ -103,7 +106,7 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if ((idx > 0 || idx < _inventorySize) && (_inventory[idx]))
+	if ((idx >= 0 && idx < _INVENTORY_SIZE) && (_inventory[idx]))
 		_inventory[idx]->use(target);
 }
 

@@ -6,7 +6,7 @@
 #    By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 13:56:52 by yrabby            #+#    #+#              #
-#    Updated: 2023/06/12 14:07:20 by yrabby           ###   ########.fr        #
+#    Updated: 2023/06/14 10:53:50 by yrabby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 					= test
 
 # class
 CLASS_DIR				= .
-CLASS_NAME				= AMateria Character Cure Ice
+CLASS_NAME				= AMateria Character Cure Ice MateriaSource
 
 # other src
 OTHER_SRC				= print

@@ -24,9 +24,9 @@ class Character : public ICharacter
 
 	private:
 		std::string _name;
-		const static int _inventorySize = 4;
+		const static int _INVENTORY_SIZE = 4;
 
-		AMateria	*_inventory[_inventorySize];
+		AMateria	*_inventory[_INVENTORY_SIZE];
 
 };
 
