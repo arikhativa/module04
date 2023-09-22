@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:55:52 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 16:07:54 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:38:20 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@
 Ice::Ice()
 	: AMateria("ice")
 {
-	// printInfo("Ice") << "Constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &src)
 	: AMateria("ice")
 {
 	(void)src;
-	// printInfo("Ice") << "Copy constructor called" << std::endl;
 }
 
 /*
@@ -35,7 +33,6 @@ Ice::Ice(const Ice &src)
 
 Ice::~Ice()
 {
-	// printInfo("Ice") << "Destructor called" << std::endl;
 }
 
 /*
@@ -44,7 +41,6 @@ Ice::~Ice()
 
 Ice &Ice::operator=(Ice const &rhs)
 {
-	// printInfo("Ice") << "Copy assignment operator called." << std::endl;
 	(void)rhs;
 	return *this;
 }

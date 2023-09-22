@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:38 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 16:07:36 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:37:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,17 @@
 AMateria::AMateria()
 	: type("default")
 {
-	// printInfo("AMateria", type) << "Default constructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &src)
 	: type("default")
 {
 	(void)src;
-	// printInfo("AMateria", type) << "Copy constructor called" << std::endl;
 }
 
 AMateria::AMateria(std::string const &type)
 	: type(type)
 {
-	// printInfo("AMateria", type) << "Constructor called" << std::endl;
 }
 
 /*
@@ -41,7 +38,6 @@ AMateria::AMateria(std::string const &type)
 
 AMateria::~AMateria()
 {
-	// printInfo("AMateria", type) << "Destructor called" << std::endl;
 }
 
 /*
@@ -50,7 +46,6 @@ AMateria::~AMateria()
 
 AMateria &AMateria::operator=(AMateria const &rhs)
 {
-	// printInfo("AMateria", type) << "Copy assignment operator called." << std::endl;
 	(void)rhs;
 	return *this;
 }
@@ -59,12 +54,11 @@ AMateria &AMateria::operator=(AMateria const &rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-// TODO maybe this will use something n the target
-// void AMateria::use(ICharacter& target)
-// {
-// 	(void)target;
-// 	// printInfo("AMateria", type) << "use() called" << std::endl;
-// }
+void AMateria::use(ICharacter &target)
+{
+	std::cout << "AMateria::use() called on: " << target.getName() << std::endl;
+	std::cout << "(next time you should override this virtual method)" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

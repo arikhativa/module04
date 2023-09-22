@@ -23,9 +23,13 @@ public:
 	Character &operator=(Character const &rhs);
 
 private:
-	std::string _name;
 	const static int _INVENTORY_SIZE = 4;
 
+	static void _copyMateria(AMateria *a[_INVENTORY_SIZE], const AMateria *const *b);
+
+	Character();
+
+	std::string _name;
 	AMateria *_inventory[_INVENTORY_SIZE];
 };
 

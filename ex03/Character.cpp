@@ -6,22 +6,39 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:09:15 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 16:07:38 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:38:04 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
+void Character::_copyMateria(AMateria *a[_INVENTORY_SIZE], const AMateria *const *b)
+{
+	for (int i = 0; i < _INVENTORY_SIZE; i++)
+	{
+		if (a[i])
+		{
+			delete a[i];
+			a[i] = NULL;
+		}
+		if (b[i])
+			a[i] = b[i]->clone();
+	}
+}
+
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
+
+Character::Character()
+{
+}
 
 Character::Character(const std::string &name)
 	: _name(name)
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 		_inventory[i] = NULL;
-	// printInfo("Character", _name) << "Constructor called" << std::endl;
 }
 
 Character::Character(const Character &src)
@@ -29,8 +46,7 @@ Character::Character(const Character &src)
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 		_inventory[i] = NULL;
-	*this = src;
-	// printInfo("Character", _name) << "Copy constructor called" << std::endl;
+	Character::_copyMateria(_inventory, src._inventory);
 }
 
 /*
@@ -39,7 +55,6 @@ Character::Character(const Character &src)
 
 Character::~Character()
 {
-	// printInfo("Character", _name) << "Destructor called" << std::endl;
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 	{
 		if (_inventory[i])
@@ -56,24 +71,11 @@ Character::~Character()
 
 Character &Character::operator=(Character const &rhs)
 {
-	// printInfo("Character", _name) << "Copy assignment operator called.";
 	if (this != &rhs)
 	{
-		std::cout << " rhs: " << rhs._name << std::endl;
 		_name = rhs._name;
-		for (int i = 0; i < _INVENTORY_SIZE; i++)
-		{
-			if (_inventory[i])
-			{
-				delete _inventory[i];
-				_inventory[i] = NULL;
-			}
-			if (rhs._inventory[i])
-				_inventory[i] = rhs._inventory[i]->clone();
-		}
+		Character::_copyMateria(_inventory, rhs._inventory);
 	}
-	else
-		std::cout << " this == rhs" << std::endl;
 	return *this;
 }
 
@@ -100,14 +102,18 @@ void Character::unequip(int idx)
 		if (_inventory[idx])
 		{
 			_inventory[idx] = NULL;
+			return;
 		}
 	}
+	std::cerr << "Nothing to unequip in index: " << idx << std::endl;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
 	if ((idx >= 0 && idx < _INVENTORY_SIZE) && (_inventory[idx]))
 		_inventory[idx]->use(target);
+	else
+		std::cerr << "Nothing to use in index: " << idx << std::endl;
 }
 
 /*

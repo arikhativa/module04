@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:44:09 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 16:08:06 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:40:10 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 
 	MateriaSource &operator=(MateriaSource const &rhs);
 
-	virtual void learnMateria(AMateria *);
+	virtual void learnMateria(AMateria *m);
 	virtual AMateria *createMateria(std::string const &type);
 
 private:

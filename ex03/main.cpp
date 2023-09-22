@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:46 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 16:08:02 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:30:51 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,8 @@ void subject_test()
 
 int main(void)
 {
-	// icetest();
-	// charTest();
+	icetest();
+	charTest();
 	subject_test();
 	return 0;
 }

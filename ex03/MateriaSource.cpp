@@ -8,7 +8,6 @@ MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 		_inventory[i] = NULL;
-	// printInfo("MateriaSource") << "Constructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &src)
@@ -16,7 +15,6 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 		_inventory[i] = NULL;
 	*this = src;
-	// printInfo("MateriaSource") << "Copy constructor called" << std::endl;
 }
 
 /*
@@ -25,7 +23,6 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 
 MateriaSource::~MateriaSource()
 {
-	// printInfo("MateriaSource") << "Destructor called" << std::endl;
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 	{
 		if (_inventory[i])
@@ -42,7 +39,6 @@ MateriaSource::~MateriaSource()
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &rhs)
 {
-	// printInfo("MateriaSource") << "Copy assignment operator called.";
 	if (this != &rhs)
 	{
 		for (int i = 0; i < _INVENTORY_SIZE; i++)
