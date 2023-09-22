@@ -5,18 +5,16 @@
 */
 
 Cat::Cat()
-	: AAnimal(),
+	: AAnimal("Cat"),
 	  _brain(new Brain())
 {
-	type = "Cat";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &src)
-	: AAnimal(),
-	  _brain(new Brain())
+	: AAnimal(src),
+	  _brain(new Brain(*src._brain))
 {
-	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
@@ -36,15 +34,12 @@ Cat::~Cat()
 
 Cat &Cat::operator=(Cat const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called.";
 	if (this != &rhs)
 	{
-		this->type = rhs.type;
+		AAnimal::operator=(rhs);
 		*_brain = *rhs._brain;
 	}
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+	_printPrefix() << "Copy assignment operator called." << std::endl;
 	return *this;
 }
 

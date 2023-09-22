@@ -16,7 +16,7 @@ public:
 	Brain &operator=(Brain const &rhs);
 
 	void setIdea(int i, const std::string &idea);
-	const std::string &getIdea(int i) const;
+	std::string getIdea(int i) const;
 
 private:
 	std::string _ideas[100];
@@ -24,7 +24,5 @@ private:
 	std::ostream &_printPrefix(const std::string &context, const std::string &type) const;
 	std::ostream &_printPrefix(void) const;
 };
-
-std::ostream &operator<<(std::ostream &o, Brain const &i);
 
 #endif /* *********************************************************** BRAIN_H */

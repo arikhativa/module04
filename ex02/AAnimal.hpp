@@ -10,6 +10,7 @@ class AAnimal
 
 public:
 	AAnimal();
+	AAnimal(const std::string &type);
 	AAnimal(AAnimal const &src);
 	virtual ~AAnimal();
 
@@ -22,6 +23,8 @@ protected:
 	std::string type;
 
 	std::ostream &_printPrefix(const std::string &context, const std::string &a_type) const;
+
+private:
 	std::ostream &_printPrefix(void) const;
 };
 

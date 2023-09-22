@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:09:13 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 15:43:47 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:01:49 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ public:
 	~Dog();
 
 	Dog &operator=(Dog const &rhs);
-	void makeSound(void) const;
+	virtual void makeSound(void) const;
 
 	void setIdea(int i, const std::string &idea);
-	const std::string &getIdea(int i) const;
+	std::string getIdea(int i) const;
 
 private:
 	Brain *_brain;

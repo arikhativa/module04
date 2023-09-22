@@ -1,5 +1,11 @@
 #include "Brain.hpp"
 
+static void copy_ideas(std::string a[100], const std::string b[100])
+{
+	for (int i = 0; i < 100; i++)
+		a[i] = b[i];
+}
+
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
@@ -11,7 +17,7 @@ Brain::Brain()
 
 Brain::Brain(const Brain &src)
 {
-	*this = src;
+	copy_ideas(_ideas, src._ideas);
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
@@ -32,35 +38,17 @@ Brain::~Brain()
 
 Brain &Brain::operator=(Brain const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called.";
 	if (this != &rhs)
 	{
-		for (int i = 0; i < 100; i++)
-			_ideas[i] = rhs._ideas[i];
+		copy_ideas(_ideas, rhs._ideas);
 	}
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+	_printPrefix() << "Copy assignment operator called." << std::endl;
 	return *this;
 }
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
-void Brain::setIdea(int i, const std::string &idea)
-{
-	if (i < 0 || i > 99)
-		return;
-	_ideas[i] = idea;
-}
-
-const std::string &Brain::getIdea(int i) const
-{
-	if (i < 0 || i > 99)
-		return _ideas[0];
-	return _ideas[i];
-}
 
 std::ostream &Brain::_printPrefix(void) const
 {
@@ -79,5 +67,19 @@ std::ostream &Brain::_printPrefix(const std::string &context, const std::string 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+void Brain::setIdea(int i, const std::string &idea)
+{
+	if (i < 0 || i > 99)
+		return;
+	_ideas[i] = idea;
+}
+
+std::string Brain::getIdea(int i) const
+{
+	if (i < 0 || i > 99)
+		return "";
+	return _ideas[i];
+}
 
 /* ************************************************************************** */

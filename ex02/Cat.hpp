@@ -16,13 +16,11 @@ public:
 	~Cat();
 
 	Cat &operator=(Cat const &rhs);
-	void makeSound(void) const;
+	virtual void makeSound(void) const;
 
 private:
 	Brain *_brain;
 	std::ostream &_printPrefix(void) const;
 };
-
-std::ostream &operator<<(std::ostream &o, Cat const &i);
 
 #endif /* ************************************************************* CAT_H */
