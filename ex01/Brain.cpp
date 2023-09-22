@@ -68,4 +68,18 @@ std::ostream &Brain::_printPrefix(const std::string &context, const std::string 
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+void Brain::setIdea(int i, const std::string &idea)
+{
+	if (i < 0 || i > 99)
+		return;
+	_ideas[i] = idea;
+}
+
+std::string Brain::getIdea(int i) const
+{
+	if (i < 0 || i > 99)
+		return "";
+	return _ideas[i];
+}
+
 /* ************************************************************************** */

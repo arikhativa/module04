@@ -61,4 +61,17 @@ void Dog::makeSound(void) const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+void Dog::setIdea(int i, const std::string &idea)
+{
+	if (_brain)
+		_brain->setIdea(i, idea);
+}
+
+std::string Dog::getIdea(int i) const
+{
+	if (!_brain)
+		return "";
+	return _brain->getIdea(i);
+}
+
 /* ************************************************************************** */

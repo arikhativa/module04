@@ -72,7 +72,9 @@ void case2()
 
 void case3()
 {
-	std::cout << "Array" << std::endl;
+	std::cout << std::endl
+			  << " - Array - " << std::endl
+			  << std::endl;
 
 	const Animal *animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
 	for (int i = 0; i < 4; i++)
@@ -84,12 +86,39 @@ void case3()
 			  << std::endl;
 }
 
+void case4()
+{
+	std::cout << std::endl
+			  << " - Deep copy - " << std::endl
+			  << std::endl;
+
+	Dog a;
+
+	a.setIdea(0, "Idea 1");
+	a.setIdea(1, "Idea 2");
+
+	Dog b(a);
+
+	b.getIdea(0);
+	b.getIdea(1);
+
+	std::cout << std::endl;
+
+	std::cout << "Dog a[0]: " << a.getIdea(0) << " - Dog b[0]: " << b.getIdea(0) << std::endl;
+	std::cout << "Dog a[1]: " << a.getIdea(1) << " - Dog b[1]: " << b.getIdea(1) << std::endl;
+
+	std::cout << std::endl
+			  << " -------- Break  ------ " << std::endl
+			  << std::endl;
+}
+
 int main(void)
 {
 	std::cout << "Basic Test:" << std::endl;
 	case1();
 	case2();
 	case3();
+	case4();
 	std::cout << std::endl
 			  << " -------- End  ------ " << std::endl
 			  << std::endl;
