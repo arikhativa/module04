@@ -22,7 +22,7 @@ public:
 protected:
 	std::string type;
 
-	std::ostream &_printPrefix(const std::string &context, const std::string &type) const;
+	std::ostream &_printPrefix(const std::string &context, const std::string &a_type) const;
 
 private:
 	std::ostream &_printPrefix(void) const;

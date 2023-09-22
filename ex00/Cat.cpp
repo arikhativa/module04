@@ -13,7 +13,6 @@ Cat::Cat()
 Cat::Cat(const Cat &src)
 	: Animal(src)
 {
-	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
@@ -32,9 +31,9 @@ Cat::~Cat()
 
 Cat &Cat::operator=(Cat const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called." << std::endl;
 	if (this != &rhs)
 		Animal::operator=(rhs);
+	_printPrefix() << "Copy assignment operator called." << std::endl;
 	return *this;
 }
 

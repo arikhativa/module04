@@ -13,7 +13,6 @@ Dog::Dog()
 Dog::Dog(const Dog &src)
 	: Animal(src)
 {
-	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
@@ -32,9 +31,9 @@ Dog::~Dog()
 
 Dog &Dog::operator=(Dog const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called." << std::endl;
 	if (this != &rhs)
 		Animal::operator=(rhs);
+	_printPrefix() << "Copy assignment operator called." << std::endl;
 	return *this;
 }
 
