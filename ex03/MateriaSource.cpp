@@ -11,7 +11,7 @@ MateriaSource::MateriaSource()
 	// printInfo("MateriaSource") << "Constructor called" << std::endl;
 }
 
-MateriaSource::MateriaSource( const MateriaSource & src )
+MateriaSource::MateriaSource(const MateriaSource &src)
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 		_inventory[i] = NULL;
@@ -40,10 +40,10 @@ MateriaSource::~MateriaSource()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
+MateriaSource &MateriaSource::operator=(MateriaSource const &rhs)
 {
 	// printInfo("MateriaSource") << "Copy assignment operator called.";
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
 		for (int i = 0; i < _INVENTORY_SIZE; i++)
 		{
@@ -65,21 +65,21 @@ MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void MateriaSource::learnMateria(AMateria* m)
+void MateriaSource::learnMateria(AMateria *m)
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 	{
 		if (!_inventory[i])
 		{
 			_inventory[i] = m;
-			return ;
+			return;
 		}
 	}
 	std::cerr << "Inventory is full" << std::endl;
 	delete m;
 }
 
-AMateria* MateriaSource::createMateria(std::string const & type)
+AMateria *MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 	{
@@ -90,10 +90,8 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	return NULL;
 }
 
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */

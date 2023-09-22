@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:09:15 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/14 11:13:50 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:05:07 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Character::Character(const std::string &name)
 	// printInfo("Character", _name) << "Constructor called" << std::endl;
 }
 
-Character::Character( const Character & src )
+Character::Character(const Character &src)
 	: _name(src._name)
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
@@ -54,10 +54,10 @@ Character::~Character()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Character &				Character::operator=( Character const & rhs )
+Character &Character::operator=(Character const &rhs)
 {
 	// printInfo("Character", _name) << "Copy assignment operator called.";
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
 		std::cout << " rhs: " << rhs._name << std::endl;
 		_name = rhs._name;
@@ -80,20 +80,20 @@ Character &				Character::operator=( Character const & rhs )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-void	Character::equip(AMateria* m)
+void Character::equip(AMateria *m)
 {
 	for (int i = 0; i < _INVENTORY_SIZE; i++)
 	{
 		if (!_inventory[i])
 		{
 			_inventory[i] = m;
-			return ;
+			return;
 		}
 	}
 	std::cerr << "Inventory is full" << std::endl;
 }
 
-void	Character::unequip(int idx)
+void Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < _INVENTORY_SIZE)
 	{
@@ -104,7 +104,7 @@ void	Character::unequip(int idx)
 	}
 }
 
-void	Character::use(int idx, ICharacter& target)
+void Character::use(int idx, ICharacter &target)
 {
 	if ((idx >= 0 && idx < _INVENTORY_SIZE) && (_inventory[idx]))
 		_inventory[idx]->use(target);
@@ -118,6 +118,5 @@ std::string const &Character::getName() const
 {
 	return _name;
 }
-
 
 /* ************************************************************************** */
