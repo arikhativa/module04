@@ -1,28 +1,28 @@
 #ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#define ANIMAL_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
+#include <iostream>
+#include <string>
+#include <iomanip>
 
 class AAnimal
 {
 
-	public:
-		AAnimal();
-		AAnimal( AAnimal const & src );
-		virtual ~AAnimal();
+public:
+	AAnimal();
+	AAnimal(AAnimal const &src);
+	virtual ~AAnimal();
 
-		AAnimal &		operator=( AAnimal const & rhs );
+	AAnimal &operator=(AAnimal const &rhs);
 
- 		const std::string		&getType(void) const;
-		virtual void			makeSound(void) const = 0;
+	const std::string &getType(void) const;
+	virtual void makeSound(void) const = 0;
 
-	protected:
-		std::string				type;
+protected:
+	std::string type;
 
-		std::ostream	&_printPrefix(const std::string &context, const std::string &type) const;
-		std::ostream	&_printPrefix(void) const;
+	std::ostream &_printPrefix(const std::string &context, const std::string &a_type) const;
+	std::ostream &_printPrefix(void) const;
 };
 
 #endif /* ********************************************************** ANIMAL_H */

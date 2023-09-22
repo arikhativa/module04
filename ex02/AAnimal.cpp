@@ -21,12 +21,11 @@ AAnimal::AAnimal() : type("AAnimal")
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-AAnimal::AAnimal( const AAnimal & src )
+AAnimal::AAnimal(const AAnimal &src)
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -41,10 +40,10 @@ AAnimal::~AAnimal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AAnimal &				AAnimal::operator=( AAnimal const & rhs )
+AAnimal &AAnimal::operator=(AAnimal const &rhs)
 {
 	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
 		this->type = rhs.type;
 	}
@@ -58,14 +57,14 @@ AAnimal &				AAnimal::operator=( AAnimal const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&AAnimal::_printPrefix(void) const
+std::ostream &AAnimal::_printPrefix(void) const
 {
 	return _printPrefix("AAnimal", type);
 }
 
-std::ostream	&AAnimal::_printPrefix(const std::string &context, const std::string &type) const
+std::ostream &AAnimal::_printPrefix(const std::string &context, const std::string &a_type) const
 {
-	std::string	t = type;
+	std::string t = a_type;
 
 	if (t.empty())
 		t = "...";
@@ -76,7 +75,7 @@ std::ostream	&AAnimal::_printPrefix(const std::string &context, const std::strin
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const std::string	&AAnimal::getType(void) const
+const std::string &AAnimal::getType(void) const
 {
 	return type;
 }
