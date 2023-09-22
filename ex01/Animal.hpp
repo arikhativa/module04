@@ -10,6 +10,7 @@ class Animal
 
 public:
 	Animal();
+	Animal(const std::string &type);
 	Animal(Animal const &src);
 	virtual ~Animal();
 

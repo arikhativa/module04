@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:08 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:37:33 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:49:02 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class WrongAnimal
 {
 public:
 	WrongAnimal();
+	WrongAnimal(const std::string &type);
 	WrongAnimal(WrongAnimal const &src);
 	virtual ~WrongAnimal();
 

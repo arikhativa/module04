@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:21:55 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:45:14 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 15:09:07 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ Animal::Animal() : type("Animal")
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &src)
+Animal::Animal(const std::string &type) : type(type)
 {
-	*this = src;
+	_printPrefix() << "Constructor called" << std::endl;
+}
+
+Animal::Animal(const Animal &src) : type(src.type)
+{
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
@@ -42,14 +46,11 @@ Animal::~Animal()
 
 Animal &Animal::operator=(Animal const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called.";
 	if (this != &rhs)
 	{
 		this->type = rhs.type;
 	}
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+	_printPrefix() << "Copy assignment operator called." << std::endl;
 	return *this;
 }
 

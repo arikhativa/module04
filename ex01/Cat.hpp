@@ -23,6 +23,4 @@ private:
 	std::ostream &_printPrefix(void) const;
 };
 
-std::ostream &operator<<(std::ostream &o, Cat const &i);
-
 #endif /* ************************************************************* CAT_H */

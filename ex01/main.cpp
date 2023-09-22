@@ -23,12 +23,6 @@ void case1()
 		Cat a1;
 		Cat a2;
 
-		std::cout << std::endl
-				  << " - Same obj - " << std::endl
-				  << std::endl;
-		std::cout << std::endl
-				  << " - diff obj - " << std::endl
-				  << std::endl;
 		a1 = a2;
 	}
 	std::cout << std::endl
@@ -61,12 +55,6 @@ void case2()
 		Dog a1;
 		Dog a2;
 
-		std::cout << std::endl
-				  << " - Same obj - " << std::endl
-				  << std::endl;
-		std::cout << std::endl
-				  << " - diff obj - " << std::endl
-				  << std::endl;
 		a1 = a2;
 	}
 	std::cout << std::endl

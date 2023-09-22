@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:16 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:44:02 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:49:08 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 */
 
 WrongCat::WrongCat()
-	: WrongAnimal()
+	: WrongAnimal("WrongCat")
 {
-	type = "WrongCat";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 

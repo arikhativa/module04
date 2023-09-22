@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:00 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:45:44 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 15:22:41 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ WrongAnimal::WrongAnimal() : type("WrongAnimal")
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &src)
+WrongAnimal::WrongAnimal(const std::string &type) : type(type)
 {
-	*this = src;
+	_printPrefix() << "Constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const WrongAnimal &src) : type(src.type)
+{
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
@@ -42,16 +46,11 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called.";
 	if (this != &rhs)
 	{
 		this->type = rhs.type;
-		std::cout << " rhs: ";
-		_printPrefix();
 	}
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+	_printPrefix() << "Copy assignment operator called." << std::endl;
 	return *this;
 }
 

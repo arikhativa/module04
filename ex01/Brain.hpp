@@ -22,6 +22,4 @@ private:
 	std::ostream &_printPrefix(void) const;
 };
 
-std::ostream &operator<<(std::ostream &o, Brain const &i);
-
 #endif /* *********************************************************** BRAIN_H */

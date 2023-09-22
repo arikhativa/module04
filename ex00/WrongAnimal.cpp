@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:00 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:43:57 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:48:48 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
 	_printPrefix() << "Default constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const std::string &type) : type(type)
+{
+	_printPrefix() << "Constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src)

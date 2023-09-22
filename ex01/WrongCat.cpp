@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:16 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:45:35 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 15:08:45 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@
 */
 
 WrongCat::WrongCat()
-	: WrongAnimal()
+	: WrongAnimal("WrongCat")
 {
-	type = "WrongCat";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &src)
-	: WrongAnimal()
+	: WrongAnimal(src)
 {
-	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
 
@@ -45,16 +43,9 @@ WrongCat::~WrongCat()
 
 WrongCat &WrongCat::operator=(WrongCat const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called.";
 	if (this != &rhs)
-	{
-		this->type = rhs.type;
-		std::cout << " rhs: ";
-		_printPrefix();
-	}
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+		WrongAnimal::operator=(rhs);
+	_printPrefix() << "Copy assignment operator called." << std::endl;
 	return *this;
 }
 
