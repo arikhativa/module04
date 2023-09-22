@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:43:41 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/13 12:05:45 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:17:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ICharacter;
 class AMateria
 {
 	private:
-		std::string _type;
+		std::string type;
 
 		AMateria();
 		AMateria(const AMateria &src);

@@ -19,7 +19,7 @@ class AAnimal
 		virtual void			makeSound(void) const = 0;
 
 	protected:
-		std::string				_type;
+		std::string				type;
 
 		std::ostream	&_printPrefix(const std::string &context, const std::string &type) const;
 		std::ostream	&_printPrefix(void) const;

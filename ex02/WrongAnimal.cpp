@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:00 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/11 17:38:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:17:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-WrongAnimal::WrongAnimal() : _type("WrongAnimal")
+WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
 	_printPrefix() << "Default constructor called" << std::endl;
 }
@@ -46,7 +46,7 @@ WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 	_printPrefix() << "Copy assignment operator called.";
 	if ( this != &rhs )
 	{
-		this->_type = rhs._type;
+		this->type = rhs.type;
 		std::cout << " rhs: ";
 		_printPrefix();
 	}
@@ -67,7 +67,7 @@ void	WrongAnimal::makeSound(void) const
 
 std::ostream	&WrongAnimal::_printPrefix(void) const
 {
-	return _printPrefix("WrongAnimal", _type);
+	return _printPrefix("WrongAnimal", type);
 }
 
 std::ostream	&WrongAnimal::_printPrefix(const std::string &context, const std::string &type) const
@@ -85,7 +85,7 @@ std::ostream	&WrongAnimal::_printPrefix(const std::string &context, const std::s
 
 const std::string	&WrongAnimal::getType(void) const
 {
-	return _type;
+	return type;
 }
 
 /* ************************************************************************** */

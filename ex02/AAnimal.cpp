@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AAnimal::AAnimal() : _type("AAnimal")
+AAnimal::AAnimal() : type("AAnimal")
 {
 	_printPrefix() << "Default constructor called" << std::endl;
 }
@@ -46,7 +46,7 @@ AAnimal &				AAnimal::operator=( AAnimal const & rhs )
 	_printPrefix() << "Copy assignment operator called.";
 	if ( this != &rhs )
 	{
-		this->_type = rhs._type;
+		this->type = rhs.type;
 	}
 	else
 		std::cout << " this == rhs";
@@ -60,7 +60,7 @@ AAnimal &				AAnimal::operator=( AAnimal const & rhs )
 
 std::ostream	&AAnimal::_printPrefix(void) const
 {
-	return _printPrefix("AAnimal", _type);
+	return _printPrefix("AAnimal", type);
 }
 
 std::ostream	&AAnimal::_printPrefix(const std::string &context, const std::string &type) const
@@ -78,7 +78,7 @@ std::ostream	&AAnimal::_printPrefix(const std::string &context, const std::strin
 
 const std::string	&AAnimal::getType(void) const
 {
-	return _type;
+	return type;
 }
 
 /* ************************************************************************** */

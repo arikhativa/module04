@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:45:38 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/14 11:13:50 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:17:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@
 */
 
 AMateria::AMateria()
-	: _type("default")
+	: type("default")
 {
-	// printInfo("AMateria", _type) << "Default constructor called" << std::endl;
+	// printInfo("AMateria", type) << "Default constructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &src)
-	: _type("default")
+	: type("default")
 {
 	(void)src;
-	// printInfo("AMateria", _type) << "Copy constructor called" << std::endl;
+	// printInfo("AMateria", type) << "Copy constructor called" << std::endl;
 }
 
 
 AMateria::AMateria(std::string const & type)
-	: _type(type)
+	: type(type)
 {
 	// printInfo("AMateria", type) << "Constructor called" << std::endl;
 }
@@ -42,7 +42,7 @@ AMateria::AMateria(std::string const & type)
 
 AMateria::~AMateria()
 {
-	// printInfo("AMateria", _type) << "Destructor called" << std::endl;
+	// printInfo("AMateria", type) << "Destructor called" << std::endl;
 }
 
 /*
@@ -51,7 +51,7 @@ AMateria::~AMateria()
 
 AMateria	&AMateria::operator=( AMateria const & rhs )
 {
-	// printInfo("AMateria", _type) << "Copy assignment operator called." << std::endl;
+	// printInfo("AMateria", type) << "Copy assignment operator called." << std::endl;
 	(void)rhs;
 	return *this;
 }
@@ -64,7 +64,7 @@ AMateria	&AMateria::operator=( AMateria const & rhs )
 // void AMateria::use(ICharacter& target)
 // {
 // 	(void)target;
-// 	// printInfo("AMateria", _type) << "use() called" << std::endl;
+// 	// printInfo("AMateria", type) << "use() called" << std::endl;
 // }
 
 
@@ -74,7 +74,7 @@ AMateria	&AMateria::operator=( AMateria const & rhs )
 
 std::string const &AMateria::getType(void) const
 {
-	return _type;
+	return type;
 }
 
 

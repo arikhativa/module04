@@ -5,19 +5,17 @@
 */
 
 Dog::Dog()
-	: Animal()
+	: Animal("Dog")
 {
-	_type = "Dog";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-Dog::Dog( const Dog & src )
+Dog::Dog(const Dog &src)
 	: Animal(src)
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -28,23 +26,15 @@ Dog::~Dog()
 	_printPrefix() << "Destructor called" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & rhs )
+Dog &Dog::operator=(Dog const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
-	{
-		this->_type = rhs._type;
-		std::cout << " rhs: ";
-		_printPrefix();
-	}
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+	_printPrefix() << "Copy assignment operator called." << std::endl;
+	if (this != &rhs)
+		Animal::operator=(rhs);
 	return *this;
 }
 
@@ -52,12 +42,12 @@ Dog &				Dog::operator=( Dog const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&Dog::_printPrefix(void) const
+std::ostream &Dog::_printPrefix(void) const
 {
-	return Animal::_printPrefix("Dog", _type);
+	return Animal::_printPrefix("Dog", type);
 }
 
-void	Dog::makeSound(void) const
+void Dog::makeSound(void) const
 {
 	_printPrefix() << "Dog is Barking!" << std::endl;
 }
@@ -65,6 +55,5 @@ void	Dog::makeSound(void) const
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */

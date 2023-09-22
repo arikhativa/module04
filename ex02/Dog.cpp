@@ -8,7 +8,7 @@ Dog::Dog()
 	: AAnimal(),
 	_brain(new Brain())
 {
-	_type = "Dog";
+	type = "Dog";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
@@ -41,7 +41,7 @@ Dog &				Dog::operator=( Dog const & rhs )
 	_printPrefix() << "Copy assignment operator called.";
 	if ( this != &rhs )
 	{
-		this->_type = rhs._type;
+		this->type = rhs.type;
 		*_brain = *rhs._brain;
 	}
 	else
@@ -66,7 +66,7 @@ const std::string	&Dog::getIdea(int i) const
 
 std::ostream	&Dog::_printPrefix(void) const
 {
-	return AAnimal::_printPrefix("Dog", _type);
+	return AAnimal::_printPrefix("Dog", type);
 }
 
 void	Dog::makeSound(void) const

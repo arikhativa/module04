@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:00 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/11 17:38:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:43:57 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-WrongAnimal::WrongAnimal() : _type("WrongAnimal")
+WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal( const WrongAnimal & src )
+WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -41,12 +40,12 @@ WrongAnimal::~WrongAnimal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
 {
 	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
-		this->_type = rhs._type;
+		this->type = rhs.type;
 		std::cout << " rhs: ";
 		_printPrefix();
 	}
@@ -60,19 +59,19 @@ WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	WrongAnimal::makeSound(void) const
+void WrongAnimal::makeSound(void) const
 {
 	_printPrefix() << "...(WrongAnimal Noises)..." << std::endl;
 }
 
-std::ostream	&WrongAnimal::_printPrefix(void) const
+std::ostream &WrongAnimal::_printPrefix(void) const
 {
-	return _printPrefix("WrongAnimal", _type);
+	return _printPrefix("WrongAnimal", type);
 }
 
-std::ostream	&WrongAnimal::_printPrefix(const std::string &context, const std::string &type) const
+std::ostream &WrongAnimal::_printPrefix(const std::string &context, const std::string &animal_type) const
 {
-	std::string	t = type;
+	std::string t = animal_type;
 
 	if (t.empty())
 		t = "...";
@@ -83,9 +82,9 @@ std::ostream	&WrongAnimal::_printPrefix(const std::string &context, const std::s
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const std::string	&WrongAnimal::getType(void) const
+const std::string &WrongAnimal::getType(void) const
 {
-	return _type;
+	return type;
 }
 
 /* ************************************************************************** */

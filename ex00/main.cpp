@@ -1,20 +1,24 @@
 
-# include "Animal.hpp"
-# include "WrongAnimal.hpp"
-# include "Dog.hpp"
-# include "Cat.hpp"
-# include "WrongCat.hpp"
+#include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-void	simpleTestAnimal(void)
+void simpleTestAnimal(void)
 {
-	std::cout << std::endl << " ------ Animal ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ Animal ------ " << std::endl
+			  << std::endl;
 	{
 		Animal a;
 
 		a.makeSound();
 		std::cout << "Calling getType():\t" << a.getType() << std::endl;
 	}
-	std::cout << std::endl << " ------ Animal* ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ Animal* ------ " << std::endl
+			  << std::endl;
 	{
 		Animal *a = new Animal();
 
@@ -24,16 +28,20 @@ void	simpleTestAnimal(void)
 	}
 }
 
-void	simpleTestDog(void)
+void simpleTestDog(void)
 {
-	std::cout << std::endl << " ------ Dog ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ Dog ------ " << std::endl
+			  << std::endl;
 	{
 		Dog a;
 
 		a.makeSound();
 		std::cout << "Calling getType():\t" << a.getType() << std::endl;
 	}
-	std::cout << std::endl << " ------ Dog* ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ Dog* ------ " << std::endl
+			  << std::endl;
 	{
 		Dog *a = new Dog();
 
@@ -41,19 +49,25 @@ void	simpleTestDog(void)
 		std::cout << "Calling getType():\t" << a->getType() << std::endl;
 		delete a;
 	}
-	std::cout << std::endl << " -------- End  ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " -------- End  ------ " << std::endl
+			  << std::endl;
 }
 
-void	simpleTestCat(void)
+void simpleTestCat(void)
 {
-	std::cout << std::endl << " ------ Cat ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ Cat ------ " << std::endl
+			  << std::endl;
 	{
 		Cat a;
 
 		a.makeSound();
 		std::cout << "Calling getType():\t" << a.getType() << std::endl;
 	}
-	std::cout << std::endl << " ------ Cat* ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ Cat* ------ " << std::endl
+			  << std::endl;
 	{
 		Cat *a = new Cat();
 
@@ -61,19 +75,25 @@ void	simpleTestCat(void)
 		std::cout << "Calling getType():\t" << a->getType() << std::endl;
 		delete a;
 	}
-	std::cout << std::endl << " -------- End  ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " -------- End  ------ " << std::endl
+			  << std::endl;
 }
 
-void	simpleTestWrong(void)
+void simpleTestWrong(void)
 {
-	std::cout << std::endl << " ------ WrongCat ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ WrongCat ------ " << std::endl
+			  << std::endl;
 	{
 		WrongCat a;
 
 		a.makeSound();
 		std::cout << "Calling getType():\t" << a.getType() << std::endl;
 	}
-	std::cout << std::endl << " ------ WrongCat* ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ------ WrongCat* ------ " << std::endl
+			  << std::endl;
 	{
 		WrongAnimal *a = new WrongCat();
 
@@ -81,67 +101,90 @@ void	simpleTestWrong(void)
 		std::cout << "Calling getType():\t" << a->getType() << std::endl;
 		delete a;
 	}
-	std::cout << std::endl << " -------- End  ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " -------- End  ------ " << std::endl
+			  << std::endl;
 }
 
-void	ctorTestAnimal(void)
+void ctorTestAnimal(void)
 {
-	std::cout << std::endl << " ----- Animal ----- " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ----- Animal ----- " << std::endl
+			  << std::endl;
 	{
-		Animal	animal;
-		Animal	animal2;
+		Animal animal;
+		Animal animal2;
 
-		std::cout << std::endl << " ----- Copy ctor test ----- " << std::endl << std::endl;
+		std::cout << std::endl
+				  << " ----- Copy ctor test ----- " << std::endl
+				  << std::endl;
 		{
-			Animal	animal3(animal);
+			Animal animal3(animal);
 		}
-		std::cout << std::endl << " ----- Assign test ----- " << std::endl << std::endl;
+		std::cout << std::endl
+				  << " ----- Assign test ----- " << std::endl
+				  << std::endl;
 		animal2 = animal;
-		animal = animal;
 	}
-	std::cout << std::endl << " -------- End  ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " -------- End  ------ " << std::endl
+			  << std::endl;
 }
 
-void	ctorTestDog(void)
+void ctorTestDog(void)
 {
-	std::cout << std::endl << " ----- Dog ----- " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ----- Dog ----- " << std::endl
+			  << std::endl;
 	{
-		Dog	animal;
-		Dog	animal2;
+		Dog animal;
+		Dog animal2;
 
-		std::cout << std::endl << " ----- Copy ctor test ----- " << std::endl << std::endl;
+		std::cout << std::endl
+				  << " ----- Copy ctor test ----- " << std::endl
+				  << std::endl;
 		{
-			Dog	animal3(animal);
+			Dog animal3(animal);
 		}
 
-		std::cout << std::endl << " ----- Assign test ----- " << std::endl << std::endl;
+		std::cout << std::endl
+				  << " ----- Assign test ----- " << std::endl
+				  << std::endl;
 		animal2 = animal;
-		animal = animal;
 	}
-	std::cout << std::endl << " -------- End  ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " -------- End  ------ " << std::endl
+			  << std::endl;
 }
 
-void	ctorTestCat(void)
+void ctorTestCat(void)
 {
-	std::cout << std::endl << " ----- Cat ----- " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " ----- Cat ----- " << std::endl
+			  << std::endl;
 	{
-		Cat	animal;
-		Cat	animal2;
+		Cat animal;
+		Cat animal2;
 
-		std::cout << std::endl << " ----- Copy ctor test ----- " << std::endl << std::endl;
+		std::cout << std::endl
+				  << " ----- Copy ctor test ----- " << std::endl
+				  << std::endl;
 		{
-			Cat	animal3(animal);
+			Cat animal3(animal);
 		}
-		std::cout << std::endl << " ----- Assign test ----- " << std::endl << std::endl;
+		std::cout << std::endl
+				  << " ----- Assign test ----- " << std::endl
+				  << std::endl;
 		animal2 = animal;
-		animal = animal;
 	}
-	std::cout << std::endl << " -------- End  ------ " << std::endl << std::endl;
+	std::cout << std::endl
+			  << " -------- End  ------ " << std::endl
+			  << std::endl;
 }
 
-int main( void )
+int main(void)
 {
-	std::cout << "Basic Test:" << std::endl ;
+	std::cout << "Basic Test:" << std::endl;
 	simpleTestAnimal();
 	simpleTestDog();
 	simpleTestCat();

@@ -6,32 +6,31 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:09:13 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/11 17:14:47 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:36:06 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
-# define DOG_HPP
+#define DOG_HPP
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 
-# include "Animal.hpp"
+#include "Animal.hpp"
 
 class Dog : public Animal
 {
 
-	public:
-		Dog();
-		Dog( Dog const & src );
-		~Dog();
+public:
+	Dog();
+	Dog(Dog const &src);
+	~Dog();
 
-		Dog &operator=( Dog const & rhs );
-		void	makeSound(void) const;
+	Dog &operator=(Dog const &rhs);
+	void makeSound(void) const;
 
-	private:
-		std::ostream	&_printPrefix(void) const;
-
+private:
+	std::ostream &_printPrefix(void) const;
 };
 
 #endif /* ************************************************************* DOG_H */

@@ -5,19 +5,17 @@
 */
 
 Cat::Cat()
-	: Animal()
+	: Animal("Cat")
 {
-	_type = "Cat";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-Cat::Cat( const Cat & src )
-	: Animal()
+Cat::Cat(const Cat &src)
+	: Animal(src)
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -28,23 +26,15 @@ Cat::~Cat()
 	_printPrefix() << "Destructor called" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
+Cat &Cat::operator=(Cat const &rhs)
 {
-	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
-	{
-		this->_type = rhs._type;
-		std::cout << " rhs: ";
-		_printPrefix();
-	}
-	else
-		std::cout << " this == rhs";
-	std::cout << std::endl;
+	_printPrefix() << "Copy assignment operator called." << std::endl;
+	if (this != &rhs)
+		Animal::operator=(rhs);
 	return *this;
 }
 
@@ -52,20 +42,18 @@ Cat &				Cat::operator=( Cat const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&Cat::_printPrefix(void) const
+std::ostream &Cat::_printPrefix(void) const
 {
-	return Animal::_printPrefix("Cat", _type);
+	return Animal::_printPrefix("Cat", type);
 }
 
-void	Cat::makeSound(void) const
+void Cat::makeSound(void) const
 {
 	_printPrefix() << "Cat is Meowing!" << std::endl;
 }
 
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */

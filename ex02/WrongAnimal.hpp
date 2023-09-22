@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:08 by yrabby            #+#    #+#             */
-/*   Updated: 2023/06/11 17:35:17 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:17:38 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class WrongAnimal
 		void			makeSound(void) const;
 
 	protected:
-		std::string				_type;
+		std::string				type;
 
 		std::ostream	&_printPrefix(const std::string &context, const std::string &type) const;
 		std::ostream	&_printPrefix(void) const;

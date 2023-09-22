@@ -8,7 +8,7 @@ Cat::Cat()
 	: Animal(),
 	_brain(new Brain())
 {
-	_type = "Cat";
+	type = "Cat";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
@@ -41,7 +41,7 @@ Cat &				Cat::operator=( Cat const & rhs )
 	_printPrefix() << "Copy assignment operator called.";
 	if ( this != &rhs )
 	{
-		this->_type = rhs._type;
+		this->type = rhs.type;
 		*_brain = *rhs._brain;
 	}
 	else
@@ -56,7 +56,7 @@ Cat &				Cat::operator=( Cat const & rhs )
 
 std::ostream	&Cat::_printPrefix(void) const
 {
-	return Animal::_printPrefix("Cat", _type);
+	return Animal::_printPrefix("Cat", type);
 }
 
 void	Cat::makeSound(void) const
