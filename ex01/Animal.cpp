@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:21:55 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:38:18 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:45:14 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ std::ostream &Animal::_printPrefix(void) const
 	return _printPrefix("Animal", type);
 }
 
-std::ostream &Animal::_printPrefix(const std::string &context, const std::string &type) const
+std::ostream &Animal::_printPrefix(const std::string &context, const std::string &a_type) const
 {
-	std::string t = type;
+	std::string t = a_type;
 
 	if (t.empty())
 		t = "...";

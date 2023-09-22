@@ -9,12 +9,11 @@ Brain::Brain()
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-Brain::Brain( const Brain & src )
+Brain::Brain(const Brain &src)
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -23,19 +22,18 @@ Brain::Brain( const Brain & src )
 Brain::~Brain()
 {
 	for (int i = 0; i < 100; i++)
-			_ideas[i] = "";
+		_ideas[i] = "";
 	_printPrefix() << "Destructor called" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+Brain &Brain::operator=(Brain const &rhs)
 {
 	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
 		for (int i = 0; i < 100; i++)
 			_ideas[i] = rhs._ideas[i];
@@ -50,14 +48,14 @@ Brain &				Brain::operator=( Brain const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&Brain::_printPrefix(void) const
+std::ostream &Brain::_printPrefix(void) const
 {
 	return _printPrefix("Brain", "");
 }
 
-std::ostream	&Brain::_printPrefix(const std::string &context, const std::string &type) const
+std::ostream &Brain::_printPrefix(const std::string &context, const std::string &type) const
 {
-	std::string	t = type;
+	std::string t = type;
 
 	if (t.empty())
 		t = "...";
@@ -67,6 +65,5 @@ std::ostream	&Brain::_printPrefix(const std::string &context, const std::string 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */

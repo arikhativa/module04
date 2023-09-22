@@ -6,20 +6,19 @@
 
 Cat::Cat()
 	: Animal(),
-	_brain(new Brain())
+	  _brain(new Brain())
 {
 	type = "Cat";
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-Cat::Cat( const Cat & src )
+Cat::Cat(const Cat &src)
 	: Animal(),
-	_brain(new Brain())
+	  _brain(new Brain())
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -31,15 +30,14 @@ Cat::~Cat()
 	_printPrefix() << "Destructor called" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
+Cat &Cat::operator=(Cat const &rhs)
 {
 	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
 		this->type = rhs.type;
 		*_brain = *rhs._brain;
@@ -54,20 +52,18 @@ Cat &				Cat::operator=( Cat const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&Cat::_printPrefix(void) const
+std::ostream &Cat::_printPrefix(void) const
 {
 	return Animal::_printPrefix("Cat", type);
 }
 
-void	Cat::makeSound(void) const
+void Cat::makeSound(void) const
 {
 	_printPrefix() << "Cat is Meowing!" << std::endl;
 }
 
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */

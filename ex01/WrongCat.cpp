@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:34:16 by yrabby            #+#    #+#             */
-/*   Updated: 2023/09/22 14:17:38 by yrabby           ###   ########.fr       */
+/*   Updated: 2023/09/22 14:45:35 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ WrongCat::WrongCat()
 	_printPrefix() << "Default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat( const WrongCat & src )
+WrongCat::WrongCat(const WrongCat &src)
 	: WrongAnimal()
 {
 	*this = src;
 	_printPrefix() << "Copy constructor called" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -40,15 +39,14 @@ WrongCat::~WrongCat()
 	_printPrefix() << "Destructor called" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-WrongCat &				WrongCat::operator=( WrongCat const & rhs )
+WrongCat &WrongCat::operator=(WrongCat const &rhs)
 {
 	_printPrefix() << "Copy assignment operator called.";
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
 		this->type = rhs.type;
 		std::cout << " rhs: ";
@@ -64,20 +62,18 @@ WrongCat &				WrongCat::operator=( WrongCat const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::ostream	&WrongCat::_printPrefix(void) const
+std::ostream &WrongCat::_printPrefix(void) const
 {
 	return WrongAnimal::_printPrefix("WrongCat", type);
 }
 
-void	WrongCat::makeSound(void) const
+void WrongCat::makeSound(void) const
 {
 	_printPrefix() << "WrongCat is Meowing!" << std::endl;
 }
 
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */
